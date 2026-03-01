@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea Hotel</title>
+    <link rel="stylesheet" href="stylerooms.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"
+        integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="content flex_space">
+            <h2 style="font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(54, 53, 53);
+            text-shadow: 5px 4px 2px #f6f6f6;">Sea Hotel</h2>
+            <div class="navlinks">
+                <ul id="menulist">
+                    <li><a href="index1.html">TRANG CHỦ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="rooms.html">PHÒNG</a></li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="login.html">ĐĂNG NHẬP / ĐĂNG KÝ</a></li>
+                    <li style="color: #fff;"> <i class="fa fa-search"></i> </li>
+                </ul>
+                <span class="fa fa-bars" onclick="menutoggle()"></span>
+            </div>
+        </div>
+    </header>
+
+
+    <script>
+        var menulist = document.getElementById('menulist');
+        menulist.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (menulist.style.maxHeight == "0px") {
+                menulist.style.maxHeight = "100vh";
+            } else {
+                menulist.style.maxHeight = "0px";
+            }
+
+        }
+    </script>
+
+
+
+    <section class="home">
+        <div class="item1">
+            <img src="image/banner3.jpg" alt="">
+            <div class="text">
+                <h1 class="text-gt" style="text-shadow: 3px 4px 4px #262525;">Giới thiệu</h1>
+            </div>
+        </div>
+
+        </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+        integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            dots: false,
+            navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    </script>
+
+
+
+
+    <section class=" container about1 ">
+        <div class=" flex1 ">
+            <div class="left1">
+                <div class="heading">
+                    <h1>WELCOME</h1>
+                    <h2>Sea Hotel</h2>
+                </div>
+                <p>Hãy bước vào cuộc phiêu lưu thực sự, nơi những kỷ niệm đáng nhớ được tạo dựng và hạnh phúc được thăng
+                    hoa. Chúng tôi rất háo hức chờ đón bạn tới để trải nghiệm không gian thiên nhiên tuyệt đẹp và dịch
+                    vụ chuyên nghiệp với tình yêu và tận tụy. Hãy để khách sạn biển
+                    chúng tôi trở thành điểm dừng chân lý tưởng cho những kỷ niệm vô giá cùng gia đình và người thân yêu
+                    của bạn.<br><br></p>
+                <button class="primary-btn play-movie">XEM VIDEO </button>
+                <div class="video-container">
+                    <!-- video- box -->
+                    <div class="video-box">
+                        <video id="myvideo" src="y2mate.com - Las Momias y el Anillo Perdido Teaser Trailer_1080p.mp4"
+                            controls></video>
+                        <!-- close video Icon -->
+                        <i class='bx bx-x close-video'></i>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="right1">
+                <img src="image/banner6.jpg" alt="" class="img1">
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        //Show Video
+        let playButton = document.querySelector('.play-movie');
+        let video = document.querySelector(".video-container");
+        let myvideo = document.querySelector("#myvideo");
+        let closebtn = document.querySelector('.close-video');
+
+        playButton.onclick = () => {
+            video.classList.add("show-video");
+            //Auto Play When Click On Button
+            myvideo.play();
+        };
+        closebtn.onclick = () => {
+            video.classList.remove("show-video");
+            //Pause On Close Video
+            myvideo.pause();
+        };
+
+    </script>
+
+
+    
+
+
+    <section class="gallery">
+        <div class="container top">
+            <div class="heading">
+                <h1>PHOTOS</h1>
+                <h2>THƯ VIỆN</h2>
+                <p>🌅 Tận hưởng ngày mới bằng việc tham gia các hoạt động ngoài trời thú vị như lặn biển, lướt ván, đi
+                    bộ trên bãi cát trắng mịn hay thưởng thức nắng vàng lung linh.</p>
+            </div>
+        </div>
+
+        <div class="content mtop">
+            <div class="owl-carousel owl-carousel1 owl-theme">
+                <div class="items1">
+                    <div class="img">
+                        <img src="image/galey1.jpg" alt="" >
+                    </div>
+                    <div class=" overlay">
+                        <span class="fa fa-plus"> </span>
+                        <h3>Photo Title Here.</h3>
+                    </div>
+                </div>
+
+                <div class="items1">
+                    <div class="img">
+                        <img src="image/galey2.jpg" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"> </span>
+                        <h3>Photo Title Here.</h3>
+                    </div>
+                </div>
+
+                <div class="items1">
+                    <div class="img">
+                        <img src="image/galey3.jpg" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"> </span>
+                        <h3>Photo Title Here.</h3>
+                    </div>
+                </div>
+
+                <div class="items1">
+                    <div class="img">
+                        <img src="image/galey4.jpg" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"> </span>
+                        <h3>Photo Title Here.</h3>
+                    </div>
+                </div>
+
+                <div class="items1">
+                    <div class="img">
+                        <img src="image/galey5.jpg" alt="">
+                    </div>
+                    <div class="overlay">
+                        <span class="fa fa-plus"> </span>
+                        <h3>Photo Title Here.</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        $('.owl-carousel1').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: true,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 1000,
+            autoplayHoverPause: true,
+            navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+            responsive: {
+                0: {
+                    items1: 1
+                },
+                768: {
+                    items: 4,
+                },
+                1000: {
+                    items1: 6
+                }
+            }
+        })
+    </script>
+
+
+   
+    <section class="services top">
+        <div class="container">
+            <div class="heading">
+                <h1>DỊCH VỤ</h1>
+                <h2>Các dịch vụ của khách sạn</h2>
+            </div>
+
+            <div class="content flex_space">
+                <div class=" grid2">
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-champagne-glasses"></i>
+                            <h3>Delious Food</h3>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-person-biking"></i>
+                            <h3>Fintness</h3>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-utensils"></i>
+                            <h3>Inhouse Restaurant</h3>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="text">
+                            <i class="fa-solid fa-spa"></i>
+                            <h3>Beauty Spa</h3>
+                        </div>
+                    </div>
+                </div>
+
+
+               
+                </div>
+        </div>
+        
+    </section>
+    <div class="empty">
+
+    </div>
+
+    <footer>
+        <div class="container grid">
+            <div class="box">
+                <h3>Mạng xã hội</h3>
+                <p>Theo dõi chúng tôi trên Facebook
+                    Theo dõi chúng tôi trên Instagram
+                    Theo dõi chúng tôi trên Twitter
+                    Theo dõi chúng tôi trên LinkedIn</p>
+
+                <div class="icon">
+                    <i class="fa fa-facebook-f"></i>
+                    <i class="fa fa-instagram"></i>
+                    <i class="fa fa-twitter"></i>
+                    <i class="fa fa-youtube"></i>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Chính sách và điều khoản</h2>
+                <ul>
+                    <li>Chính sách bảo mật</li>
+                    <li>Điều khoản và điều kiện sử dụng</li>
+                    <li>Chính sách hoàn hủy đặt phòng</li>
+                    <li>Chính sách sử dụng thông tin cá nhân</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h2>Liên hệ</h2>
+                <p>Liên hệ với chúng tôi:
+                </p>
+                <i class="fa fa-location-dot"></i>
+                <label>Địa chỉ: 123 Đường Biển, Thành phố Biển Xanh, Quốc gia</label> <br>
+                <i class="fa fa-phone"></i>
+                <label>1900 8119</label> <br>
+                <i class="fa fa-envelope"></i>
+                <label>Email: info@seahotel.com</label> <br>
+            </div>
+        </div>
+    </footer>
+
+    <script src="http://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
