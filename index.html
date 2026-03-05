@@ -29,20 +29,23 @@
 </head>
 
 <body>
-    <header>
-        <div class="content flex_space">
-            <h2 style="font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(54, 53, 53);
-            text-shadow: 5px 4px 2px #f6f6f6;">Shinseidai</h2>
+    <header class="site-header">
+        <div class="content flex_space header-inner">
+            <a class="brand" href="index.html" aria-label="Shinseidai">
+                <span class="brand-name">Shinseidai</span>
+                <span class="brand-tagline">Service & Trading Company</span>
+            </a>
             <div class="navlinks">
-                <ul id="menulist">
+                <ul id="menulist" class="nav-menu">
                     <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="#about">GIỚI THIỆU</a></li>
-                    <li><a href="#services">DỊCH VỤ</a></li>
-                    <li><a href="#fields">LĨNH VỰC HOẠT ĐỘNG</a></li>
-                    <li><a href="#contact">LIÊN HỆ</a></li>
-                    <li style="color: #fff;"> <i class="fa fa-search"></i> </li>
+                    <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
+                    <li><a href="rooms.html">DỊCH VỤ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="login.html">TÀI KHOẢN</a></li>
                 </ul>
-                <span class="fa fa-bars" onclick="menutoggle()"></span>
+                <button class="nav-toggle" type="button" aria-label="Mở menu" onclick="menutoggle()">
+                    <span class="fa fa-bars"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -50,16 +53,28 @@
 
     <script>
         var menulist = document.getElementById('menulist');
-        menulist.style.maxHeight = "0px";
 
-        function menutoggle() {
-            if (menulist.style.maxHeight == "0px") {
-                menulist.style.maxHeight = "100vh";
-            } else {
+        function syncMenuForViewport() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) {
+                menulist.style.maxHeight = "";
+            } else if (!menulist.style.maxHeight) {
                 menulist.style.maxHeight = "0px";
             }
-
         }
+
+        function menutoggle() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) return;
+            if (menulist.style.maxHeight && menulist.style.maxHeight !== "0px") {
+                menulist.style.maxHeight = "0px";
+            } else {
+                menulist.style.maxHeight = "70vh";
+            }
+        }
+
+        window.addEventListener("resize", syncMenuForViewport);
+        syncMenuForViewport();
     </script>
 
 
@@ -299,7 +314,7 @@
                     <div class="items">
                         <div class="image">
                             <img src="image/room3.jpg" alt="">
-                        </div>0.2
+                        </div>
                         <div class="text">
                             <h2>Tổ chức Sự kiện & Activation</h2>
                             <div class="rate flex">
@@ -614,7 +629,6 @@
                         <div class="image">
                             <img src="image/amthuc.jpg" alt="">
                         </div>
-                        d
                         <div class="stext">
                             <h2>Giai đoạn 2016 – 2018: Khởi nghiệp & Định vị</h2>
                             <div class="admin flex">
@@ -632,7 +646,7 @@
 
                     <div class="items ">
                         <div class="image">
-                            <img src="image/lehoi.png" alt="">
+                            <img src="image/lehoi.jpg" alt="">
                         </div>
 
                         <div class="stext">
@@ -654,7 +668,7 @@
                 <div class="right" >
                     <div class="box flex">
                         <div class="img">
-                            <img src="image/uudai.png" alt="">
+                            <img src="image/uudai.jpg" alt="">
                         </div>
 
                         <div class="stext">
@@ -680,7 +694,7 @@
 
                     <div class="box flex">
                         <div class="img">
-                            <img src="image/tietkiem.png" alt="">
+                            <img src="image/tietkiem.jpg" alt="">
                         </div>
 
                         <div class="stext">

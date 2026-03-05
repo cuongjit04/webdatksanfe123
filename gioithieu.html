@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea Hotel</title>
+    <title>Giới thiệu - Shinseidai</title>
     <link rel="stylesheet" href="stylerooms.css">
 
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -28,20 +28,23 @@
 </head>
 
 <body>
-    <header>
-        <div class="content flex_space">
-            <h2 style="font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(54, 53, 53);
-            text-shadow: 5px 4px 2px #f6f6f6;">Sea Hotel</h2>
+    <header class="site-header">
+        <div class="content flex_space header-inner">
+            <a class="brand" href="index.html" aria-label="Shinseidai">
+                <span class="brand-name">Shinseidai</span>
+                <span class="brand-tagline">Service & Trading Company</span>
+            </a>
             <div class="navlinks">
-                <ul id="menulist">
+                <ul id="menulist" class="nav-menu">
                     <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
-                    <li><a href="rooms.html">PHÒNG</a></li>
                     <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
-                    <li><a href="login.html">ĐĂNG NHẬP / ĐĂNG KÝ</a></li>
-                    <li style="color: #fff;"> <i class="fa fa-search"></i> </li>
+                    <li><a href="rooms.html">DỊCH VỤ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="login.html">TÀI KHOẢN</a></li>
                 </ul>
-                <span class="fa fa-bars" onclick="menutoggle()"></span>
+                <button class="nav-toggle" type="button" aria-label="Mở menu" onclick="menutoggle()">
+                    <span class="fa fa-bars"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -49,16 +52,28 @@
 
     <script>
         var menulist = document.getElementById('menulist');
-        menulist.style.maxHeight = "0px";
 
-        function menutoggle() {
-            if (menulist.style.maxHeight == "0px") {
-                menulist.style.maxHeight = "100vh";
-            } else {
+        function syncMenuForViewport() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) {
+                menulist.style.maxHeight = "";
+            } else if (!menulist.style.maxHeight) {
                 menulist.style.maxHeight = "0px";
             }
-
         }
+
+        function menutoggle() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) return;
+            if (menulist.style.maxHeight && menulist.style.maxHeight !== "0px") {
+                menulist.style.maxHeight = "0px";
+            } else {
+                menulist.style.maxHeight = "70vh";
+            }
+        }
+
+        window.addEventListener("resize", syncMenuForViewport);
+        syncMenuForViewport();
     </script>
 
 
@@ -111,25 +126,18 @@
         <div class=" flex1 ">
             <div class="left1">
                 <div class="heading">
-                    <h1>WELCOME</h1>
-                    <h2>Sea Hotel</h2>
+                    <h1>GIỚI THIỆU</h1>
+                    <h2>Shinseidai</h2>
                 </div>
-                <p>Hãy bước vào cuộc phiêu lưu thực sự, nơi những kỷ niệm đáng nhớ được tạo dựng và hạnh phúc được thăng
-                    hoa. Chúng tôi rất háo hức chờ đón bạn tới để trải nghiệm không gian thiên nhiên tuyệt đẹp và dịch
-                    vụ chuyên nghiệp với tình yêu và tận tụy. Hãy để khách sạn biển
-                    chúng tôi trở thành điểm dừng chân lý tưởng cho những kỷ niệm vô giá cùng gia đình và người thân yêu
-                    của bạn.<br><br></p>
-                <button class="primary-btn play-movie">XEM VIDEO </button>
-                <div class="video-container">
-                    <!-- video- box -->
-                    <div class="video-box">
-                        <video id="myvideo" src="y2mate.com - Las Momias y el Anillo Perdido Teaser Trailer_1080p.mp4"
-                            controls></video>
-                        <!-- close video Icon -->
-                        <i class='bx bx-x close-video'></i>
-
-                    </div>
-                </div>
+                <p>Công ty TNHH Thương mại và Dịch vụ Shinseidai được thành lập ngày 20/07/2016 tại TP. Đà Nẵng.
+                    Với định vị “Thế hệ mới”, Shinseidai cung cấp các giải pháp truyền thông – marketing – quảng cáo
+                    sáng tạo, hiệu quả và tối ưu theo dữ liệu, đồng hành cùng doanh nghiệp trong kỷ nguyên số.</p>
+                <p><b>Tầm nhìn:</b> Trở thành đơn vị truyền thông và dịch vụ uy tín hàng đầu tại Việt Nam.<br>
+                    <b>Sứ mệnh:</b> Đồng hành cùng doanh nghiệp trong kỷ nguyên 4.0, tối ưu hiệu quả tiếp cận và xây dựng thương hiệu bền vững.<br>
+                    <b>Giá trị cốt lõi:</b> Sáng tạo – Chuyên nghiệp – Tận tâm – Hiệu quả.</p>
+                <p><b>Thông tin liên hệ:</b><br>
+                    Website: <a href="https://www.rakuraku.edu.vn/" target="_blank" rel="noopener">www.rakuraku.edu.vn</a><br>
+                    Email: contact@rakuraku.edu.vn</p>
             </div>
 
             <div class="right1">
@@ -139,25 +147,7 @@
     </section>
 
 
-    <script>
-        //Show Video
-        let playButton = document.querySelector('.play-movie');
-        let video = document.querySelector(".video-container");
-        let myvideo = document.querySelector("#myvideo");
-        let closebtn = document.querySelector('.close-video');
-
-        playButton.onclick = () => {
-            video.classList.add("show-video");
-            //Auto Play When Click On Button
-            myvideo.play();
-        };
-        closebtn.onclick = () => {
-            video.classList.remove("show-video");
-            //Pause On Close Video
-            myvideo.pause();
-        };
-
-    </script>
+    
 
 
     
@@ -166,10 +156,10 @@
     <section class="gallery">
         <div class="container top">
             <div class="heading">
-                <h1>PHOTOS</h1>
-                <h2>THƯ VIỆN</h2>
-                <p>🌅 Tận hưởng ngày mới bằng việc tham gia các hoạt động ngoài trời thú vị như lặn biển, lướt ván, đi
-                    bộ trên bãi cát trắng mịn hay thưởng thức nắng vàng lung linh.</p>
+                <h1>LĨNH VỰC</h1>
+                <h2>HOẠT ĐỘNG NỔI BẬT</h2>
+                <p>Từ chiến lược thương hiệu, digital marketing đến tổ chức sự kiện và sản xuất nội dung,
+                    Shinseidai cung cấp giải pháp truyền thông phù hợp theo từng mục tiêu của doanh nghiệp.</p>
             </div>
         </div>
 
@@ -181,7 +171,7 @@
                     </div>
                     <div class=" overlay">
                         <span class="fa fa-plus"> </span>
-                        <h3>Photo Title Here.</h3>
+                        <h3>Quảng cáo & Truyền thông số</h3>
                     </div>
                 </div>
 
@@ -191,7 +181,7 @@
                     </div>
                     <div class="overlay">
                         <span class="fa fa-plus"> </span>
-                        <h3>Photo Title Here.</h3>
+                        <h3>Tổ chức sự kiện & Activation</h3>
                     </div>
                 </div>
 
@@ -201,7 +191,7 @@
                     </div>
                     <div class="overlay">
                         <span class="fa fa-plus"> </span>
-                        <h3>Photo Title Here.</h3>
+                        <h3>Thiết kế & sản xuất nội dung</h3>
                     </div>
                 </div>
 
@@ -211,7 +201,7 @@
                     </div>
                     <div class="overlay">
                         <span class="fa fa-plus"> </span>
-                        <h3>Photo Title Here.</h3>
+                        <h3>Giải pháp truyền thông giáo dục</h3>
                     </div>
                 </div>
 
@@ -221,7 +211,7 @@
                     </div>
                     <div class="overlay">
                         <span class="fa fa-plus"> </span>
-                        <h3>Photo Title Here.</h3>
+                        <h3>Đối tác chiến lược đa ngành</h3>
                     </div>
                 </div>
             </div>

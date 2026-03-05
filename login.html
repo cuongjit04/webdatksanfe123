@@ -32,35 +32,50 @@
 </head>
 
 <body>
-    <header class="head">
-        <div class="content flex_space">
-            <h2 style="font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 255, 255);
-            text-shadow: 5px 4px 2px #131313;">Sea Hotel</h2>
+    <header class="site-header">
+        <div class="content flex_space header-inner">
+            <a class="brand" href="index.html" aria-label="Shinseidai">
+                <span class="brand-name">Shinseidai</span>
+                <span class="brand-tagline">Service & Trading Company</span>
+            </a>
             <div class="navlinks">
-                <ul id="menulist">
+                <ul id="menulist" class="nav-menu">
                     <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
-                    <li><a href="rooms.html">PHÒNG</a></li>
                     <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
-                    <li><a href="login.html">ĐĂNG NHẬP / ĐĂNG KÝ</a></li>
-                    <li style="color: #fff;"> <i class="fa fa-search"></i> </li>
+                    <li><a href="rooms.html">DỊCH VỤ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="login.html">TÀI KHOẢN</a></li>
                 </ul>
-                <span class="fa fa-bars" onclick="menutoggle()"></span>
+                <button class="nav-toggle" type="button" aria-label="Mở menu" onclick="menutoggle()">
+                    <span class="fa fa-bars"></span>
+                </button>
             </div>
         </div>
     </header>
     <script>
         var menulist = document.getElementById('menulist');
-        menulist.style.maxHeight = "0px";
 
-        function menutoggle() {
-            if (menulist.style.maxHeight == "0px") {
-                menulist.style.maxHeight = "100vh";
-            } else {
+        function syncMenuForViewport() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) {
+                menulist.style.maxHeight = "";
+            } else if (!menulist.style.maxHeight) {
                 menulist.style.maxHeight = "0px";
             }
-
         }
+
+        function menutoggle() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) return;
+            if (menulist.style.maxHeight && menulist.style.maxHeight !== "0px") {
+                menulist.style.maxHeight = "0px";
+            } else {
+                menulist.style.maxHeight = "70vh";
+            }
+        }
+
+        window.addEventListener("resize", syncMenuForViewport);
+        syncMenuForViewport();
     </script>
 
     <section class="wrapper">

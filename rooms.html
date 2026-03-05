@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea Hotel</title>
+    <title>Dịch vụ - Shinseidai</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="stylerooms.css">
@@ -28,20 +28,23 @@
 </head>
 
 <body>
-    <header>
-        <div class="content flex_space">
-            <h2 style="font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(54, 53, 53);
-            text-shadow: 5px 4px 2px #f6f6f6;">Sea Hotel</h2>
+    <header class="site-header">
+        <div class="content flex_space header-inner">
+            <a class="brand" href="index.html" aria-label="Shinseidai">
+                <span class="brand-name">Shinseidai</span>
+                <span class="brand-tagline">Service & Trading Company</span>
+            </a>
             <div class="navlinks">
-                <ul id="menulist">
+                <ul id="menulist" class="nav-menu">
                     <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
-                    <li><a href="rooms.html">PHÒNG</a></li>
                     <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
-                    <li><a href="login.html">ĐĂNG NHẬP / ĐĂNG KÝ</a></li>
-                    <li style="color: #fff;"> <i class="fa fa-search"></i> </li>
+                    <li><a href="rooms.html">DỊCH VỤ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="login.html">TÀI KHOẢN</a></li>
                 </ul>
-                <span class="fa fa-bars" onclick="menutoggle()"></span>
+                <button class="nav-toggle" type="button" aria-label="Mở menu" onclick="menutoggle()">
+                    <span class="fa fa-bars"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -49,64 +52,69 @@
 
     <script>
         var menulist = document.getElementById('menulist');
-        menulist.style.maxHeight = "0px";
 
-        function menutoggle() {
-            if (menulist.style.maxHeight == "0px") {
-                menulist.style.maxHeight = "100vh";
-            } else {
+        function syncMenuForViewport() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) {
+                menulist.style.maxHeight = "";
+            } else if (!menulist.style.maxHeight) {
                 menulist.style.maxHeight = "0px";
             }
-
         }
+
+        function menutoggle() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) return;
+            if (menulist.style.maxHeight && menulist.style.maxHeight !== "0px") {
+                menulist.style.maxHeight = "0px";
+            } else {
+                menulist.style.maxHeight = "70vh";
+            }
+        }
+
+        window.addEventListener("resize", syncMenuForViewport);
+        syncMenuForViewport();
     </script>
 
     <div id="slide">
         <div class="item" style="background-image: url(image/room1.jpg);">
             <div class="content">
-                <div class="name">PHÒNG STANDARD</div>
-                <div class="des">Diện tích: Khoảng 18m<sup>2</sup>.
-                    Tiện nghi: Giường thoải mái, phòng tắm riêng, TV màn hình phẳng, điều hòa không khí,
-                    minibar và két an toàn.</div>
-                <button>Đặt Ngay</button>
+                <div class="name">TƯ VẤN CHIẾN LƯỢC TRUYỀN THÔNG</div>
+                <div class="des">Tư vấn định vị thương hiệu, xây dựng chiến lược truyền thông – marketing tổng thể,
+                    xác định chân dung khách hàng và thông điệp cốt lõi cho từng giai đoạn.</div>
+                <button>Liên hệ</button>
             </div>
         </div>
         <div class="item" style="background-image: url(image/room2.jpg);">
             <div class="content">
-                <div class="name">Phòng Deluxe</div>
-                <div class="des">Diện tích: Khoảng 22m<sup>2</sup>.
-                    Tiện nghi: Giường King hoặc Twin, phòng tắm sang trọng với bồn tắm riêng, TV màn hình
-                    phẳng, minibar, két an toàn và Wi-Fi miễn phí.</div>
-                <button>Đặt Ngay</button>
+                <div class="name">DIGITAL MARKETING & QUẢNG CÁO ONLINE</div>
+                <div class="des">Triển khai đa kênh Facebook/Google/TikTok, KOL/KOC, báo chí… theo mục tiêu
+                    nhận diện – tương tác – chuyển đổi, tối ưu dựa trên dữ liệu.</div>
+                <button>Liên hệ</button>
             </div>
         </div>
         <div class="item" style="background-image: url(image/room3.jpg);">
             <div class="content">
-                <div class="name">Phòng Suite</div>
-                <div class="des">Diện tích: Khoảng 35m<sup>2</sup>.
-                    Tiện nghi: Phòng ngủ riêng biệt và phòng khách rộng lớn, phòng tắm với bồn tắm và vòi
-                    sen riêng, TV màn hình phẳng, minibar, két an toàn, Wi-Fi miễn phí và khu vực làm việc
-                    riêng.</div>
-                <button>Đặt Ngay</button>
+                <div class="name">SỰ KIỆN & ACTIVATION</div>
+                <div class="des">Lên ý tưởng – thiết kế – vận hành sự kiện, hội nghị/hội thảo, lễ ra mắt sản phẩm,
+                    activation tại điểm bán… với kịch bản sáng tạo và quy trình chuyên nghiệp.</div>
+                <button>Liên hệ</button>
             </div>
         </div>
         <div class="item" style="background-image: url(image/room4.jpg);">
             <div class="content">
-                <div class="name">Phòng Ocean View</div>
-                <div class="des">Diện tích: Khoảng 25m<sup>2</sup>.
-                    Tiện nghi: Tầm nhìn trực tiếp ra biển, giường thoải mái, phòng tắm riêng, TV màn hình
-                    phẳng, minibar, két an toàn và Wi-Fi miễn phí.</div>
-                <button>Đặt Ngay</button>
+                <div class="name">SẢN XUẤT NỘI DUNG & THIẾT KẾ</div>
+                <div class="des">Sản xuất TVC/viral clip, chụp hình, thiết kế ấn phẩm,
+                    xây dựng nội dung kênh số và hệ thống nhận diện đồng bộ.</div>
+                <button>Liên hệ</button>
             </div>
         </div>
         <div class="item" style="background-image: url(image/room5.jpg);">
             <div class="content">
-                <div class="name">Phòng biệt thự biển</div>
-                <div class="des">Diện tích: Khoảng 41m<sup>2</sup>.
-                    Tiện nghi: Biệt thự riêng biệt với không gian rộng lớn, bể bơi riêng, tầm nhìn tuyệt đẹp
-                    ra biển, phòng ngủ riêng biệt, phòng khách và phòng ăn, phòng tắm với bồn tắm và vòi sen
-                    riêng, TV màn hình phẳng, minibar, két an toàn, Wi-Fi miễn phí và dịch vụ phục vụ 24/7.</div>
-                <button>Đặt Ngay</button>
+                <div class="name">GIẢI PHÁP TRUYỀN THÔNG GIÁO DỤC</div>
+                <div class="des">Triển khai hội thảo, truyền thông tuyển sinh, tư vấn du học,
+                    kết nối nhà trường – phụ huynh – học sinh thông qua nền tảng số và kênh truyền thông phù hợp.</div>
+                <button>Liên hệ</button>
             </div>
         </div>
     </div>
@@ -137,10 +145,10 @@
     <section class="rooms">
         <div class="container top">
             <div class="heading">
-                <h1>KHÁM PHÁ</h1>
-                <H2>PHÒNG CỦA CHÚNG TÔI</H2>
-                <p>🏖️ Với phòng nghỉ rộng rãi, thiết kế sang trọng và tầm nhìn tuyệt đẹp hướng ra biển, <br>bạn sẽ được
-                    trải nghiệm giấc ngủ thư thái và thức dậy với khung cảnh đẹp như tranh.</p>
+                <h1>DỊCH VỤ</h1>
+                <H2>GIẢI PHÁP CỦA SHINSEIDAI</H2>
+                <p>Chúng tôi cung cấp các giải pháp truyền thông – marketing – quảng cáo theo mục tiêu và ngân sách,
+                    triển khai trọn gói từ chiến lược đến vận hành và tối ưu hiệu quả.</p>
             </div>
         </div>
         <div class="content mtop">
@@ -150,7 +158,7 @@
                     <img src="image/room1.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Phòng Standard</h2>
+                    <h2>Tư vấn Chiến lược Truyền thông</h2>
                     <div class="rate flex">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -158,12 +166,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p>Diện tích: Khoảng 18m<sup>2</sup>.
-                        Tiện nghi: Giường thoải mái, phòng tắm riêng, TV màn hình phẳng, điều hòa không khí,
-                        minibar và két an toàn.</p>
+                    <p>Xây dựng chiến lược thương hiệu và truyền thông tổng thể, xác định chân dung khách hàng mục tiêu,
+                        thông điệp cốt lõi và kế hoạch triển khai theo giai đoạn.</p>
                     <div class="button flex">
-                        <button class="primary-btn">ĐẶT NGAY</button>
-                        <h3>$130 <span> <br> MỘT ĐÊM </span> </h3>
+                        <a class="primary-btn" href="lienhe.html">NHẬN TƯ VẤN</a>
+                        <h3>Tùy biến <span>THEO MỤC TIÊU</span></h3>
                     </div>
                 </div>
             </div>
@@ -173,7 +180,7 @@
                     <img src="image/room2.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Phòng Deluxe</h2>
+                    <h2>Digital Marketing & Quảng cáo Online</h2>
                     <div class="rate flex">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -181,12 +188,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p>Diện tích: Khoảng 22m<sup>2</sup>.
-                        Tiện nghi: Giường King hoặc Twin, phòng tắm sang trọng với bồn tắm riêng, TV màn hình
-                        phẳng, minibar, két an toàn và Wi-Fi miễn phí.</p>
+                    <p>Triển khai đa kênh Facebook/Google/TikTok, KOL/KOC, báo chí… theo KPI rõ ràng,
+                        tối ưu chi phí và hiệu quả theo dữ liệu.</p>
                     <div class="button flex">
-                        <button class="primary-btn">ĐẶT NGAY</button>
-                        <h3>$160 <span> <br> MỘT ĐÊM </span> </h3>
+                        <a class="primary-btn" href="lienhe.html">NHẬN TƯ VẤN</a>
+                        <h3>Ngân sách <span>LINH HOẠT</span></h3>
                     </div>
                 </div>
             </div>
@@ -196,7 +202,7 @@
                     <img src="image/room3.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Phòng Suite</h2>
+                    <h2>Sự kiện & Activation</h2>
                     <div class="rate flex">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -204,13 +210,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p>Diện tích: Khoảng 35m<sup>2</sup>.
-                        Tiện nghi: Phòng ngủ riêng biệt và phòng khách rộng lớn, phòng tắm với bồn tắm và vòi
-                        sen riêng, TV màn hình phẳng, minibar, két an toàn, Wi-Fi miễn phí và khu vực làm việc
-                        riêng..</p>
+                    <p>Lên ý tưởng – thiết kế – vận hành sự kiện, lễ ra mắt, hội nghị/hội thảo,
+                        activation tại điểm bán… đảm bảo chỉn chu và đồng bộ nhận diện.</p>
                     <div class="button flex">
-                        <button class="primary-btn">ĐẶT NGAY</button>
-                        <h3>$250 <span> <br> MỘT ĐÊM </span> </h3>
+                        <a class="primary-btn" href="lienhe.html">NHẬN TƯ VẤN</a>
+                        <h3>Dịch vụ <span>TRỌN GÓI</span></h3>
                     </div>
                 </div>
             </div>
@@ -220,7 +224,7 @@
                     <img src="image/room4.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Phòng Ocean View</h2>
+                    <h2>Sản xuất Nội dung & Thiết kế</h2>
                     <div class="rate flex">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -228,12 +232,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p>Diện tích: Khoảng 25m<sup>2</sup>.
-                        Tiện nghi: Tầm nhìn trực tiếp ra biển, giường thoải mái, phòng tắm riêng, TV màn hình
-                        phẳng, minibar, két an toàn và Wi-Fi miễn phí.</p>
+                    <p>Sản xuất TVC/viral clip, chụp hình, thiết kế ấn phẩm và nội dung kênh số,
+                        đảm bảo “đúng thương hiệu – đúng thông điệp – đúng mục tiêu”.</p>
                     <div class="button flex">
-                        <button class="primary-btn">ĐẶT NGAY</button>
-                        <h3>$260 <span> <br> MỘT ĐÊM </span> </h3>
+                        <a class="primary-btn" href="lienhe.html">NHẬN TƯ VẤN</a>
+                        <h3>Đội ngũ <span>SÁNG TẠO</span></h3>
                     </div>
                 </div>
             </div>
@@ -243,7 +246,7 @@
                     <img src="image/room7.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Phòng biệt thự biển</h2>
+                    <h2>Giải pháp Truyền thông Giáo dục</h2>
                     <div class="rate flex">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -251,14 +254,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p>Diện tích: Khoảng 41m<sup>2</sup>.
-                        Tiện nghi: Biệt thự riêng biệt , bể bơi riêng, tầm nhìn 
-                        ra biển, phòng ngủ riêng biệt, phòng khách và phòng ăn, phòng tắm với bồn tắm và vòi sen
-                        riêng, TV màn hình phẳng, minibar,  Wi-Fi miễn phí và dịch vụ phục vụ 24/7.
-                    </p>
+                    <p>Triển khai hội thảo, truyền thông tuyển sinh/tư vấn du học, nội dung giáo dục,
+                        kết nối nhà trường – phụ huynh – học sinh qua nền tảng số.</p>
                     <div class="button flex">
-                        <button class="primary-btn">ĐẶT NGAY</button>
-                        <h3>$250 <span> <br> Per Night </span> </h3>
+                        <a class="primary-btn" href="lienhe.html">NHẬN TƯ VẤN</a>
+                        <h3>Giải pháp <span>CHUYÊN BIỆT</span></h3>
                     </div>
                 </div>
 
@@ -268,7 +268,7 @@
                     <img src="image/room1.jpg" alt="">
                 </div>
                 <div class="text">
-                    <h2>Phòng Standard</h2>
+                    <h2>PR – Báo chí – KOL/KOC</h2>
                     <div class="rate flex">
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
@@ -276,12 +276,11 @@
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                     </div>
-                    <p>Diện tích: Khoảng 18m<sup>2</sup>.
-                        Tiện nghi: Giường thoải mái, phòng tắm riêng, TV màn hình phẳng, điều hòa không khí,
-                        minibar và két an toàn.</p>
+                    <p>Xây dựng câu chuyện thương hiệu, triển khai bài PR, booking KOL/KOC,
+                        tăng độ tin cậy và phủ thương hiệu trên các kênh phù hợp.</p>
                     <div class="button flex">
-                        <button class="primary-btn">ĐẶT NGAY</button>
-                        <h3>$130 <span> <br> MỘT ĐÊM </span> </h3>
+                        <a class="primary-btn" href="lienhe.html">NHẬN TƯ VẤN</a>
+                        <h3>Triển khai <span>THEO KPI</span></h3>
                     </div>
                 </div>
             </div>

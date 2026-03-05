@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sea Hotel</title>
+    <title>Liên hệ - Shinseidai</title>
     <link rel="stylesheet" href="stylerooms.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -28,20 +28,23 @@
 </head>
 
 <body>
-    <header class="he">
-        <div class="content flex_space">
-            <h2 style="font-size: xx-large; font-family: Georgia, 'Times New Roman', Times, serif; color: rgb(255, 255, 255);
-            text-shadow: 5px 4px 2px #2e2d2d;">Sea Hotel</h2>
+    <header class="site-header">
+        <div class="content flex_space header-inner">
+            <a class="brand" href="index.html" aria-label="Shinseidai">
+                <span class="brand-name">Shinseidai</span>
+                <span class="brand-tagline">Service & Trading Company</span>
+            </a>
             <div class="navlinks">
-                <ul id="menulist">
+                <ul id="menulist" class="nav-menu">
                     <li><a href="index.html">TRANG CHỦ</a></li>
-                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
-                    <li><a href="rooms.html">PHÒNG</a></li>
                     <li><a href="gioithieu.html">GIỚI THIỆU</a></li>
-                    <li><a href="login.html">ĐĂNG NHẬP / ĐĂNG KÝ</a></li>
-                    <li style="color: #fff;"> <i class="fa fa-search"></i> </li>
+                    <li><a href="rooms.html">DỊCH VỤ</a></li>
+                    <li><a href="lienhe.html">LIÊN HỆ</a></li>
+                    <li><a href="login.html">TÀI KHOẢN</a></li>
                 </ul>
-                <span class="fa fa-bars" onclick="menutoggle()"></span>
+                <button class="nav-toggle" type="button" aria-label="Mở menu" onclick="menutoggle()">
+                    <span class="fa fa-bars"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -49,16 +52,28 @@
 
     <script>
         var menulist = document.getElementById('menulist');
-        menulist.style.maxHeight = "0px";
 
-        function menutoggle() {
-            if (menulist.style.maxHeight == "0px") {
-                menulist.style.maxHeight = "100vh";
-            } else {
+        function syncMenuForViewport() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) {
+                menulist.style.maxHeight = "";
+            } else if (!menulist.style.maxHeight) {
                 menulist.style.maxHeight = "0px";
             }
-
         }
+
+        function menutoggle() {
+            var isMobile = window.matchMedia("(max-width: 768px)").matches;
+            if (!isMobile) return;
+            if (menulist.style.maxHeight && menulist.style.maxHeight !== "0px") {
+                menulist.style.maxHeight = "0px";
+            } else {
+                menulist.style.maxHeight = "70vh";
+            }
+        }
+
+        window.addEventListener("resize", syncMenuForViewport);
+        syncMenuForViewport();
     </script>
 
 
@@ -81,14 +96,14 @@
     <div class="map-container">
     <div class="heading map-td">
         <h1>MAP</h1>
-        <h2>Vị trí  của khách sạn</h2>
+        <h2>Vị trí văn phòng</h2>
     </div>
 <div class="map-content">
     <div class="map" id="map"></div>
     <div class="map-title">
-      <h1> Khách Sạn Sea Hotel</h1>
-<h2> Địa chỉ : 09 Thống Nhất, Phường 1, Thành phố Vũng Tầu, Bà Rịa - Vũng Tàu </h2>
-<h2>Liên hệ : 011243545</h2>
+      <h1>Shinseidai Co., Ltd.</h1>
+<h2>Địa chỉ: K1006/H23/21 Tôn Đản, Phường Cẩm Lệ, TP. Đà Nẵng, Việt Nam</h2>
+<h2>Liên hệ: 0934 774 664 - contact@rakuraku.edu.vn</h2>
 <div class="rate flex">
     <i class="fa fa-star"></i>
     <i class="fa fa-star"></i>
@@ -104,10 +119,10 @@
 
 <script>
     function initMap() {
-        var location = {lat: 37.7749, lng: -122.4194}; // Thay thế với tọa độ địa chỉ mong muốn
+        var location = {lat: 16.0544, lng: 108.2022}; // Đà Nẵng
 
         var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 12,
+            zoom: 14,
             center: location
         });
 
